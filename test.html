@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="./Neo4jConnector.js">
+	</script>
+	<script>
+		a = new Connector("bolt://localhost:7687","neo4j","123456")
+		a.initSession("neo4j")
+		//a.session.run("MATCH (n) return n").then((res)=>{console.log(res)});
+		node = a.initNode();
+		node.name = "new";
+		a.addNodes([node,node]).then(()=>{console.log("success")});
+	</script>
+</html>
